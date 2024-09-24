@@ -17,4 +17,20 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .cut-image-small {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .cut-image-big {
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  }
+
+  .custom-bg {
+    background: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    );
+  }
 }

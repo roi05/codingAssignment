@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`antialiased ${lato.className}`}>{children}</body>
+      <body className={`antialiased ${lato.className} tab-l:p-[27px]`}>
+        {children}
+      </body>
     </html>
   );
 }
