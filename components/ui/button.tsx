@@ -1,40 +1,42 @@
 import React, { forwardRef } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
+import clsx from 'clsx';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'danger'; // Customizable styles
-  size?: 'small' | 'medium' | 'large'; // Customizable sizes
+interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   isLoading?: boolean; // Show loading state
 }
 
+const buttonVariants = cva(
+  'rounded focus:outline-none focus:ring', // Base styles
+  {
+    variants: {
+      variant: {
+        primary: 'bg-white text-black',
+        secondary: 'bg-my-green text-white',
+        danger: 'bg-red-500 text-white',
+      },
+      size: {
+        small: 'px-4 py-2 text-sm',
+        medium: 'px-6 py-3',
+        large: 'px-8 py-4 text-lg',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'medium',
+    },
+  }
+);
+
 // Wrap the component with forwardRef
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      variant = 'primary',
-      size = 'medium',
-      isLoading = false,
-      children,
-      className,
-      ...rest
-    },
-    ref
-  ) => {
-    const baseStyles = 'rounded focus:outline-none focus:ring';
-    const variantStyles = {
-      primary: 'bg-white text-black',
-      secondary: 'bg-my-green text-white',
-      danger: 'bg-red-500 text-white',
-    };
-    const sizeStyles = {
-      small: 'px-4 py-2 text-sm',
-      medium: 'px-6 py-3',
-      large: 'px-8 py-4 text-lg',
-    };
-
+  ({ variant, size, isLoading = false, children, className, ...rest }, ref) => {
     return (
       <button
         ref={ref} // Attach the ref here
-        className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+        className={clsx(buttonVariants({ variant, size }), className)}
         disabled={isLoading}
         {...rest}>
         {children}
