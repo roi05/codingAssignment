@@ -1,6 +1,7 @@
 'use client';
 import DetailSection from '@/components/detail-section';
 import FeedbackSection from '@/components/feedback-section';
+import FooterSection from '@/components/footer-setion';
 import FormSection from '@/components/form-section';
 import HeroSection from '@/components/hero-section';
 import QuotesSection from '@/components/quotes-section';
@@ -15,6 +16,7 @@ export default function Home() {
       <ToursSection />
       <FeedbackSection />
       <FormSection />
+      <FooterSection />
     </main>
   );
 }
