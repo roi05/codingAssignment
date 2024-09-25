@@ -75,6 +75,10 @@ body {
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
   }
 
+  .feedback-cut {
+    clip-path: polygon(9% 0, 100% 0, 93% 100%, 0 100%);
+  }
+
   .orange-bg {
     background: linear-gradient(
       to right bottom,
@@ -148,5 +152,21 @@ body {
       rgb(41, 152, 255),
       rgb(86, 67, 250)
     );
+  }
+
+  .circle {
+    @apply float-left;
+    shape-outside: circle();
+    clip-path: circle();
+  }
+
+  /* Custom CSS to handle hover */
+  .hover-container:hover .hover-element {
+    transform: translateY(0);
+  }
+
+  .hover-element {
+    transform: translateY(100%);
+    transition: transform 0.5s ease-out;
   }
 }
