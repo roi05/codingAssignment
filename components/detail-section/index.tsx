@@ -9,7 +9,7 @@ function DetailSection() {
   return (
     <section className='space-y-6 mb-40 tab-l:mb-0'>
       <motion.h1
-        className='text-xl w-fit mx-auto  px-12 tab-p:text-2x tab-l:text-5xl font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-[#7ed56f] to-[#28b485] 
+        className='text-xl w-fit mx-auto  px-12 tab-p:text-2xl tab-l:text-5xl font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-[#7ed56f] to-[#28b485] 
       tracking-widest text-center'
         whileHover={{
           skewX: 15, // Skew the element horizontally

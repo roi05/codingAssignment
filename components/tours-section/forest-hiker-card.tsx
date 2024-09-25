@@ -1,7 +1,15 @@
 import React from 'react';
 import AnimationPulse from '../ui/animation-pulse-button';
 
-function ForestHikerCard() {
+type ForestHikerCardProps = {
+  setIsmodalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function ForestHikerCard({ setIsmodalOpen }: ForestHikerCardProps) {
+  const handleOpenModal = () => {
+    setIsmodalOpen(true);
+  };
+
   return (
     <div className='card h-[700px] tab-l:h-[500px] '>
       <div className='content'>
@@ -26,7 +34,7 @@ function ForestHikerCard() {
               <h1 className='text-xs'>ONLY</h1>
               <h1 className='text-3xl font-thin'>$497</h1>
             </div>
-            <AnimationPulse>BOOK NOW!</AnimationPulse>
+            <AnimationPulse onClick={handleOpenModal}>BOOK NOW!</AnimationPulse>
           </div>
         </div>
         <div className='back green flex flex-col items-center justify-around text-white'>
@@ -34,7 +42,7 @@ function ForestHikerCard() {
             <h1 className='text-xl'>ONLY</h1>
             <h1 className='text-5xl font-thin'>$497</h1>
           </div>
-          <AnimationPulse>BOOK NOW!</AnimationPulse>
+          <AnimationPulse onClick={handleOpenModal}>BOOK NOW!</AnimationPulse>
         </div>
       </div>
     </div>

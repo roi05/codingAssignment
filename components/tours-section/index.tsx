@@ -1,12 +1,19 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import SeaExplorerCard from './sea-explorer-card';
 import ForestHikerCard from './forest-hiker-card';
 import SnowAdventurerCard from './snow-adventurer-card';
 import AnimationPulse from '../ui/animation-pulse-button';
+import Modal from '../ui/modal';
+import { useState } from 'react';
 
 function ToursSection() {
+  const [ismodalOpen, setIsmodalOpen] = useState<boolean>(false);
+
   return (
     <section className='space-y-16'>
+      <Modal isMOdalOpen={ismodalOpen} setIsmodalOpen={setIsmodalOpen} />
       <motion.h1
         className='text-xl px-12 w-fit mx-auto tab-p:text-2x tab-l:text-5xl font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-[#7ed56f] to-[#28b485] 
 tracking-widest text-center'
@@ -21,12 +28,14 @@ tracking-widest text-center'
       </motion.h1>
 
       <div className='flex flex-col justify-center items-center gap-y-4 gap-x-16 tab-l:flex-row flex-wrap'>
-        <SeaExplorerCard />
-        <ForestHikerCard />
-        <SnowAdventurerCard />
+        <SeaExplorerCard setIsmodalOpen={setIsmodalOpen} />
+        <ForestHikerCard setIsmodalOpen={setIsmodalOpen} />
+        <SnowAdventurerCard setIsmodalOpen={setIsmodalOpen} />
       </div>
 
-      <AnimationPulse variant='green'>DISCOVER ALL TOURS</AnimationPulse>
+      <AnimationPulse variant='green' onClick={() => setIsmodalOpen(true)}>
+        DISCOVER ALL TOURS
+      </AnimationPulse>
     </section>
   );
 }

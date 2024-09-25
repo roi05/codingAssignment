@@ -1,6 +1,14 @@
 import AnimationPulse from '../ui/animation-pulse-button';
 
-function SeaExplorerCard() {
+type SeaExplorerCardProps = {
+  setIsmodalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function SeaExplorerCard({ setIsmodalOpen }: SeaExplorerCardProps) {
+  const handleOpenModal = () => {
+    setIsmodalOpen(true);
+  };
+
   return (
     <div className='card h-[700px] tab-l:h-[500px] '>
       <div className='content'>
@@ -28,7 +36,7 @@ function SeaExplorerCard() {
               <h1 className='text-xs'>ONLY</h1>
               <h1 className='text-3xl font-thin'>$297</h1>
             </div>
-            <AnimationPulse>BOOK NOW!</AnimationPulse>
+            <AnimationPulse onClick={handleOpenModal}>BOOK NOW!</AnimationPulse>
           </div>
         </div>
         <div className='back orange flex flex-col items-center justify-around text-white'>
@@ -36,7 +44,7 @@ function SeaExplorerCard() {
             <h1 className='text-xl'>ONLY</h1>
             <h1 className='text-5xl font-thin'>$297</h1>
           </div>
-          <AnimationPulse>BOOK NOW!</AnimationPulse>
+          <AnimationPulse onClick={handleOpenModal}>BOOK NOW!</AnimationPulse>
         </div>
       </div>
     </div>
