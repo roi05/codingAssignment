@@ -1,8 +1,15 @@
 import AnimationPulseButton from '@/components/ui/animation-pulse-button';
+import Logo from '@/public/img/logo-white.png';
+import Image from 'next/image';
 
 function HeroSection() {
   return (
     <section className="bg-[url('/img/hero.jpg')] text-white bg-cover bg-center h-[941px] cut-image-small tab-p:cut-image-big relative">
+      <Image
+        src={Logo}
+        alt='logo'
+        className='absolute w-16 h-8 z-10 top-8 left-8'
+      />
       <div className='pt-72 h-full z-10 relative'>
         <div className='space-y-8'>
           <div className='text-center space-y-4'>
