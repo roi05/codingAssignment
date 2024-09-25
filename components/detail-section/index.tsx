@@ -7,7 +7,7 @@ import Mountain from '@/public/img/nat-3-large.jpg';
 
 function DetailSection() {
   return (
-    <section className='space-y-6 h-[2000px]'>
+    <section className='space-y-6 mb-40 tab-l:mb-0'>
       <motion.h1
         className='text-xl px-12 tab-p:text-2x tab-l:text-5xl font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-[#7ed56f] to-[#28b485] 
       tracking-widest text-center'
@@ -69,7 +69,7 @@ function DetailSection() {
           </div>
 
           {/* Image 3 (Mountain) */}
-          <div className='absolute left-44 tab-l:top-24 tab-l:left-12 tab-l:z-10 p-2 rounded-md w-[190px] h-[130px] tab-l:w-[350px] tab-l:h-[250px] flex items-center justify-center transition-all group-hover:scale-90 hover:z-20 hover:scale-100 hover:border-8 hover:border-my-green'>
+          <div className='absolute left-36 tab-l:top-24 tab-l:left-12 tab-l:z-10 p-2 rounded-md w-[190px] h-[130px] tab-l:w-[350px] tab-l:h-[250px] flex items-center justify-center transition-all group-hover:scale-90 hover:z-20 hover:scale-100 hover:border-8 hover:border-my-green'>
             <Image
               src={Mountain}
               alt='mountain'

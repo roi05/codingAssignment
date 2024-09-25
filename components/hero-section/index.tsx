@@ -1,4 +1,4 @@
-import AnimationPulse from '@/components/ui/animation-pulse-button';
+import AnimationPulseButton from '@/components/ui/animation-pulse-button';
 
 function HeroSection() {
   return (
@@ -13,7 +13,7 @@ function HeroSection() {
               IS WHERE LIFE HAPPENS
             </p>
           </div>
-          <AnimationPulse>DISCOVER OUR TOURS</AnimationPulse>
+          <AnimationPulseButton>DISCOVER OUR TOURS</AnimationPulseButton>
         </div>
       </div>
       <div className='absolute inset-0 bg-cover custom-bg'></div>
