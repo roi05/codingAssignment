@@ -7,7 +7,7 @@ import Button from '../ui/button';
 function FeedbackSection() {
   return (
     <section className='mt-14'>
-      <div className='relative w-full h-screen overflow-hidden'>
+      <div className='relative w-full py-12'>
         <video
           className='absolute top-0 left-0 w-full h-full object-cover'
           autoPlay
