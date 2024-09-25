@@ -30,11 +30,123 @@ body {
     clip-path: polygon(0 14%, 100% 0, 100% 85%, 0 100%);
   }
 
+  .card {
+    width: 300px;
+    perspective: 500px;
+  }
+
+  .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+
+  @media (min-width: 900px) {
+    .card:hover .content {
+      transform: rotateY(-180deg);
+      transition: transform 0.5s;
+    }
+  }
+
+  .front,
+  .back {
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
   .custom-bg {
     background: linear-gradient(
       to right bottom,
       rgba(126, 213, 111, 0.8),
       rgba(40, 180, 133, 0.8)
+    );
+  }
+
+  .card-cut {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .orange-bg {
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 185, 0, 0.5),
+      rgba(255, 119, 48, 0.5)
+    );
+    filter: brightness(1.2);
+  }
+
+  .orange-text {
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 185, 0, 0.85),
+      rgba(255, 119, 48, 0.85)
+    );
+  }
+
+  .orange {
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 185, 0),
+      rgba(255, 119, 48)
+    );
+  }
+
+  .green-bg {
+    background: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.5),
+      rgba(40, 180, 133, 0.5)
+    );
+    filter: brightness(1.2);
+  }
+
+  .green-text {
+    background: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.85),
+      rgba(40, 180, 133, 0.85)
+    );
+  }
+
+  .green {
+    background: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111),
+      rgba(40, 180, 133)
+    );
+  }
+
+  .blue-bg {
+    background: linear-gradient(
+      to right bottom,
+      rgb(41, 152, 255, 0.5),
+      rgb(86, 67, 250, 0.5)
+    );
+    filter: brightness(1.2);
+  }
+
+  .blue-text {
+    background: linear-gradient(
+      to right bottom,
+      rgb(41, 152, 255, 0.85),
+      rgb(86, 67, 250, 0.85)
+    );
+  }
+
+  .blue {
+    background: linear-gradient(
+      to right bottom,
+      rgb(41, 152, 255),
+      rgb(86, 67, 250)
     );
   }
 }

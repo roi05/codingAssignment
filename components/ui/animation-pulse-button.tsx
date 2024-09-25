@@ -6,9 +6,10 @@ import Button from './button';
 
 type AnimationPulseProps = {
   children?: ReactNode;
+  variant?: 'green' | 'white';
 };
 
-function AnimationPulse({ children }: AnimationPulseProps) {
+function AnimationPulse({ children, variant }: AnimationPulseProps) {
   const [isHovered, setIsHovered] = useState(false); // State to track hover
   const buttonRef = useRef<HTMLButtonElement | null>(null); // Reference to the button
   const [buttonSize, setButtonSize] = useState({ width: 0, height: 0 }); // State to hold button size
@@ -30,7 +31,9 @@ function AnimationPulse({ children }: AnimationPulseProps) {
           isHovered ? { scale: 1.7, opacity: 0 } : { scale: 1, opacity: 1 }
         }
         transition={{ duration: 0.4 }}
-        className={`absolute bg-white rounded-full`}
+        className={`absolute rounded-full ${
+          variant === 'green' ? 'bg-green-500' : 'bg-white'
+        } `}
         style={{
           width: buttonSize.width ? `${buttonSize.width}px` : '0',
           height: buttonSize.height ? `${buttonSize.height}px` : '0',
@@ -47,7 +50,9 @@ function AnimationPulse({ children }: AnimationPulseProps) {
         <Button
           size='medium'
           ref={buttonRef} // Attach ref to button
-          className='min-w-fit rounded-full font-light text-gray-500 hover:shadow-xl hover:-translate-y-0.5'>
+          className={`min-w-fit rounded-full font-light text-gray-500 hover:shadow-xl hover:-translate-y-0.5 ${
+            variant === 'green' ? 'bg-green-500 text-white' : 'bg-white'
+          }`}>
           {children}
         </Button>
       </div>
