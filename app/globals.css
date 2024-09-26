@@ -163,4 +163,28 @@ body {
     shape-outside: circle();
     clip-path: circle();
   }
+
+  .hamburger-bg {
+    background: rgb(127, 235, 121);
+    background: radial-gradient(
+      circle,
+      rgba(127, 235, 121, 1) 0%,
+      rgba(92, 212, 132, 1) 42%
+    );
+  }
+
+  .gradient-text {
+    background: rgb(127, 235, 121);
+    background: radial-gradient(
+      circle,
+      rgba(127, 235, 121, 1) 0%,
+      rgba(92, 212, 132, 1) 42%
+    );
+    -webkit-background-clip: text; /* For webkit-based browsers */
+    color: transparent; /* Make the text color transparent */
+  }
+
+  .hamburger-cut {
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+  }
 }

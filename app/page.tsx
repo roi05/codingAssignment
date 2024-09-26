@@ -3,6 +3,7 @@ import DetailSection from '@/components/detail-section';
 import FeedbackSection from '@/components/feedback-section';
 import FooterSection from '@/components/footer-setion';
 import FormSection from '@/components/form-section';
+import Hamburger from '@/components/hamburger';
 import HeroSection from '@/components/hero-section';
 import QuotesSection from '@/components/quotes-section';
 import ToursSection from '@/components/tours-section';
@@ -10,6 +11,7 @@ import ToursSection from '@/components/tours-section';
 export default function Home() {
   return (
     <main className='bg-[#f7f7f7]'>
+      <Hamburger />
       <HeroSection />
       <DetailSection />
       <QuotesSection />
