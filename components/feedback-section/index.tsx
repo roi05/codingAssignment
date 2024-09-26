@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Girl from '@/public/img/nat-8.jpg';
 import Boy from '@/public/img/nat-9.jpg';
 import Button from '../ui/button';
+import CustomerPicture from './cutomer-picture';
 
 function FeedbackSection() {
   return (
@@ -34,13 +34,9 @@ function FeedbackSection() {
           </motion.h1>
 
           <div className='px-12 tab-l:px-56 space-y-8'>
-            <div className='tab-p:feedback-cut px-24 py-8 bg-white bg-opacity-70'>
+            <div className='tab-p:feedback-cut px-24 py-8 tab-l:py-24 bg-white bg-opacity-70'>
               <div>
-                <Image
-                  src={Girl}
-                  className='circle w-44 h-36 rounded-full mr-12'
-                  alt='customer profile'
-                />
+                <CustomerPicture src={Girl} name={['MARY', 'SMITH']} />
                 <div className='leading-relaxed text-gray-500'>
                   <h1 className='mb-4 font-semibold'>
                     I HAD THE BEST WEEK EVER WITH MY FAMILY
@@ -56,13 +52,10 @@ function FeedbackSection() {
                 </div>
               </div>
             </div>
-            <div className='tab-p:feedback-cut px-24 py-8 bg-white bg-opacity-70'>
+            <div className='tab-p:feedback-cut px-24 py-8 tab-l:py-24 bg-white bg-opacity-70'>
               <div>
-                <Image
-                  src={Boy}
-                  className='circle w-44 h-36 rounded-full mr-12'
-                  alt='customer profile'
-                />
+                <CustomerPicture src={Boy} name={['JACK', 'WILSON']} />
+
                 <div className='leading-relaxed text-gray-500'>
                   <h1 className='mb-4 font-semibold'>
                     I HAD THE BEST WEEK EVER WITH MY FAMILY
@@ -80,7 +73,7 @@ function FeedbackSection() {
             </div>
             <Button
               size='small'
-              className='block mx-auto underline bg-transparent underline-offset-4 text-my-green bg-transparent p-[120px] hover:bg-my-green hover:text-white'>
+              className='block mx-auto underline  underline-offset-4 text-my-green bg-transparent p-[120px] hover:bg-my-green hover:text-white'>
               Read all Stories -&gt;
             </Button>
           </div>
